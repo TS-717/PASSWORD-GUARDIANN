@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Guardian</title>
+    <meta name="description" content="Check your password strength, get recommendations, and keep track of password history with Password Guardian." />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>🔑 Password Analyzer</h1>
+        </header>
+        <main class="main-content">
+            <section class="analysis-section glass-box">
+                <h2>Password Analysis</h2>
+                <div class="password-input-container">
+                    <input type="password" id="password-input" placeholder="Enter your password..." />
+                    <span id="toggle-visibility">👁️</span>
+                </div>
+                <div class="strength-bar-container">
+                    <div class="strength-bar"></div>
+                    <span class="strength-label">Medium</span>
+                </div>
+                <div class="criteria-cards">
+                    <div class="card fail">❌<p>Length</p></div>
+                    <div class="card warn">⚠️<p>Complexity</p></div>
+                    <div class="card pass">✅<p>Uniqueness</p></div>
+                    <div class="card pass">✅<p>Pattern-free</p></div>
+                </div>
+            </section>
+            <section class="recommendations-section glass-box">
+                <h2>💡 Smart Recommendations</h2>
+                <div class="generator-config">
+                    <h3>Password Generator</h3>
+                    <div class="config-options">
+                        <label><input type="checkbox" id="include-uppercase" checked> Uppercase Letters</label>
+                        <label><input type="checkbox" id="include-lowercase" checked> Lowercase Letters</label>
+                        <label><input type="checkbox" id="include-numbers" checked> Numbers</label>
+                        <label><input type="checkbox" id="include-symbols" checked> Special Characters</label>
+                        <div class="length-selector">
+                            <label>Length: <span id="length-value">16</span></label>
+                            <input type="range" id="password-length" min="8" max="32" value="16">
+                        </div>
+                    </div>
+                </div>
+                <button id="generate-btn">🔄 Generate Strong Password</button>
+                <ul class="recommendations-list">
+                    <li>➜ Add more special characters</li>
+                    <li>➜ Increase the length of your password</li>
+                    <li>➜ Mix uppercase and lowercase letters</li>
+                </ul>
+            </section>
+            <section class="detailed-analysis-section glass-box">
+                <h2>📘 Detailed Analysis</h2>
+                <div class="history-list"></div>
+            </section>
+            <section class="password-history glass-box">
+                <h2>📜 Password History</h2>
+                <div class="history-list"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
